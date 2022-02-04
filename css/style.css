@@ -2,4 +2,32 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-align: center;
+}
+
+body {
+
+}
+
+header {
+  padding: 1em;
+}
+
+.logo {
+  font-size: 3rem;
+}
+
+.card-container {
+  padding: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 0.25fr));
+  gap: 30px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  padding: 1em;
+  font-size: 1.5rem;
 }
