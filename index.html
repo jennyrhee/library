@@ -14,7 +14,20 @@
   </header>
 
   <div class="card-container"></div>
+  
+  <button id="add-btn" onclick="openForm()">&#10133;</button>
 
+  <form action="" id="form">
+    <button id="close-btn" onclick="closeForm()">&times;</button>
+    <input type="text" name="title" id="title" placeholder="Title" required>
+    <input type="text" name="author" id="author" placeholder="Author" required>
+    <input type="number" name="pages" id="pages" placeholder="Pages" required>
+    <div class="read-container">
+      <label for="hasRead">Read?</label>
+      <input type="checkbox" name="hasRead" id="hasRead">
+    </div>
+    <button type="submit" id="submit-btn">Submit</button>
+  </form>
   <footer>
 
   </footer>

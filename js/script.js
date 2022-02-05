@@ -24,4 +24,27 @@ function makeCard(book) {
   container.appendChild(card);
 }
 
+function openForm() {
+  document.getElementById('form').style.display = 'flex';
+}
+
+function closeForm() {
+  document.getElementById('form').style.display = 'none';
+  document.getElementById('form').reset();
+}
+
 library.forEach(book => makeCard(book));
+
+const form = document.getElementById('form');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  let newBook = new Book(
+    form.elements['title'].value,
+    form.elements['author'].value,
+    form.elements['pages'].value,
+    form.elements['hasRead'].checked
+  )
+  makeCard(newBook);
+  closeForm();
+})
