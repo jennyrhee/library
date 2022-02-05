@@ -9,7 +9,8 @@
 
 body,
 .card-container,
-button {
+button,
+input {
   font-family: 'Baloo 2', sans-serif;
   background-color: #edf6f9;
 }
@@ -25,7 +26,8 @@ header {
   position: relative;
 }
 
-button {
+button,
+#submit-btn {
   background-color: #edf6f9;
   cursor: pointer;
 }
@@ -47,7 +49,7 @@ button {
   flex-direction: column;
   align-items: center;
   padding: 1em;
-  background-color: #ffddd2;
+  background-color: #f8e1db;
   color: #124559;
   border-radius: 10px;
   box-shadow: 0 2px 5px gray;
@@ -73,14 +75,17 @@ button {
 }
 
 #read-btn,
-#remove-btn {
+#remove-btn,
+#submit-btn {
   margin: 0.5em 0.5em 0 0.5em;
   width: 28%;
   border-radius: 8px;
+  border: solid 1px;
+  padding: 0.2em 0;
 }
 
 #read-btn.has-read {
-  background-color: #83c5be;
+  background-color: #80c4b8;
 }
 
 #read-btn {
@@ -108,18 +113,23 @@ button {
   transform: translate(-50%, -50%);
   padding: 2em;
   width: max(18%, 225px);
-  background-color: lightgoldenrodyellow; /* TODO: change later, using to see */
+  background-color: #006d77;
+  color: #edf6f9;
   display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px gray;
 }
 
 #close-btn {
   position: fixed;
   top: 10px;
   right: 10px;
-  padding: 0.2em;
+  padding: 0 0.3em;
+  border-radius: 5px;
+  border: solid 1px;
 }
 
 input[type=text],
@@ -128,15 +138,26 @@ input[type=number] {
   width: 11rem;
 }
 
+#title {
+  margin-top: 1.5em;
+}
+
 input {
-  margin: 0.4em;
+  margin: 0.3em;
   padding: 0.5em;
+  border-radius: 8px;
 }
 
 .read-container {
   display: flex;
+  align-items: center;
+}
+
+label {
+  font-size: 0.8rem;
 }
 
 #submit-btn {
   margin-top: 1em;
+  width: 40%;
 }
