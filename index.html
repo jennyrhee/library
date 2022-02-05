@@ -21,7 +21,7 @@
     <button id="close-btn" type="button" onclick="closeForm()">&times;</button>
     <input type="text" name="title" id="title" placeholder="Title" required>
     <input type="text" name="author" id="author" placeholder="Author" required>
-    <input type="number" name="pages" id="pages" placeholder="Pages" required>
+    <input type="number" name="pages" id="pages" placeholder="Pages" min=1 max=15000 required>
     <div class="read-container">
       <label for="hasRead">Read?</label>
       <input type="checkbox" name="hasRead" id="hasRead">
