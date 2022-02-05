@@ -32,9 +32,10 @@ button {
 }
 
 .card-container {
-  padding: 2em;
+  padding: 7vh 5vw;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 0.25fr));
+  justify-content: center;
   gap: 30px;
 }
 
