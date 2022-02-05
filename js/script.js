@@ -1,7 +1,7 @@
 let library = [
   new Book('Project Hail Mary', 'Andy Weir', 496, false),
   new Book('Dune', 'Frank Herbert', 412, false),
-  new Book('Barbarians at the Gate', ['Brian Burrough', 'John Helyar'], 592, false)
+  new Book('Barbarians at the Gate', ['Brian Burrough', 'John Helyar'], 592, true)
 ];
 
 function Book(title, author, pages, hasRead) {
