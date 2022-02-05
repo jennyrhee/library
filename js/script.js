@@ -10,9 +10,19 @@ function Book(title, author, pages, hasRead) {
   this.hasRead = hasRead;
 }
 
+function addRemoveBtn(card) {
+  const removeBtn = document.createElement('button');
+  removeBtn.textContent = 'Remove';
+  removeBtn.setAttribute('id', 'remove-btn');
+  removeBtn.onclick = () => card.remove();
+  card.append(removeBtn);
+
+  return card;
+}
+
 function makeCard(book) {
   const container = document.querySelector('.card-container');
-  const card = document.createElement('div');
+  let card = document.createElement('div');
   card.classList.add('card');
 
   for (let prop in book) {
@@ -21,6 +31,7 @@ function makeCard(book) {
     div.textContent = book[prop];
     card.append(div);
   }
+  card = addRemoveBtn(card);
   container.appendChild(card);
 }
 
