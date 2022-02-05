@@ -1,11 +1,12 @@
 let library = [
   new Book('Project Hail Mary', 'Andy Weir', 496, false),
-  new Book('Dune', 'Frank Herbert', 412, false)
+  new Book('Dune', 'Frank Herbert', 412, false),
+  new Book('Barbarians at the Gate', ['Brian Burrough', 'John Helyar'], 592, false)
 ];
 
 function Book(title, author, pages, hasRead) {
-  this.title = `"${title}"`;
-  this.author = author;
+  this.title = title;
+  this.author = Array.isArray(author) ? author.join(', ') : author;
   this.pages = pages + ' pages';
   this.hasRead = hasRead;
 }
