@@ -10,6 +10,23 @@ function Book(title, author, pages, hasRead) {
   this.hasRead = hasRead;
 }
 
+function createReadBtn(book) {
+  const readBtn = document.createElement('button');
+  readBtn.setAttribute('id', 'read-btn');
+  if (book.hasRead) {
+    readBtn.classList.add('has-read');
+    readBtn.textContent = 'Read'
+  } else {
+    readBtn.textContent = 'Not Read';
+  }
+  readBtn.onclick = () => {
+    readBtn.textContent = readBtn.textContent === 'Read' ? 'Not Read' : 'Read';
+    readBtn.classList.toggle('has-read');
+  }
+
+  return readBtn;
+}
+
 function addRemoveBtn(card) {
   const removeBtn = document.createElement('button');
   removeBtn.textContent = 'Remove';
@@ -26,9 +43,11 @@ function makeCard(book) {
   card.classList.add('card');
 
   for (let prop in book) {
-    let div = document.createElement('div');
-    div.classList.add(prop);
-    div.textContent = book[prop];
+    let div = prop === 'hasRead' ? createReadBtn(book) : document.createElement('div');
+    if (prop !== 'hasRead') {
+      div.classList.add(prop);
+      div.textContent = book[prop];
+    }
     card.append(div);
   }
   card = addRemoveBtn(card);
