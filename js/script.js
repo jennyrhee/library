@@ -1,14 +1,10 @@
-let library = [
-  new Book('Project Hail Mary', 'Andy Weir', 496, false),
-  new Book('Dune', 'Frank Herbert', 412, false),
-  new Book('Barbarians at the Gate', ['Brian Burrough', 'John Helyar'], 592, true)
-];
-
-function Book(title, author, pages, hasRead) {
-  this.title = title;
-  this.author = Array.isArray(author) ? author.join(', ') : author;
-  this.pages = pages + ' pages';
-  this.hasRead = hasRead;
+class Book {
+  constructor(title, author, pages, hasRead) {
+    this.title = title;
+    this.author = Array.isArray(author) ? author.join(', ') : author;
+    this.pages = pages + ' pages';
+    this.hasRead = hasRead;
+  }
 }
 
 function createReadBtn(book) {
@@ -43,14 +39,15 @@ function makeCard(book) {
   let card = document.createElement('div');
   card.classList.add('card');
 
-  for (let prop in book) {
+  const props = ['title', 'author', 'pages', 'hasRead'];
+  props.forEach(prop => {
     let div = prop === 'hasRead' ? createReadBtn(book) : document.createElement('div');
     if (prop !== 'hasRead') {
       div.classList.add(prop);
       div.textContent = book[prop];
     }
     card.append(div);
-  }
+  });
   card = addRemoveBtn(card);
   container.appendChild(card);
 }
@@ -64,6 +61,11 @@ function closeForm() {
   document.getElementById('form').reset();
 }
 
+let library = [
+  new Book('Project Hail Mary', 'Andy Weir', 496, false),
+  new Book('Dune', 'Frank Herbert', 412, false),
+  new Book('Barbarians at the Gate', ['Brian Burrough', 'John Helyar'], 592, true)
+];
 library.forEach(book => makeCard(book));
 
 const form = document.getElementById('form');
